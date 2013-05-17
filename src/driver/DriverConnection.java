@@ -10,7 +10,6 @@ import java.sql.DatabaseMetaData;
 public class DriverConnection {
 
 
-
 public static void main (String[] args) throws Exception {
 
 	// the sql string commands

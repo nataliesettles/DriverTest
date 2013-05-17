@@ -9,18 +9,18 @@ import java.sql.ResultSetMetaData;
 import java.sql.DatabaseMetaData;
 
 public class DbClass {
-//	public String sUrl; // for advertising and debug purposes
+//	public String sUrl;
 	public String sDbUrl;
 	private String sDriverName = "org.sqlite.JDBC";
 //	private String sDriver;
 	private Connection conn = null;
 	private Statement stmt = null;
-	private String sDriver = "jdbc:sqlite"; // moved this here, because as long
+	private String sDriver = "jdbc:sqlite"; // moved this here because as long as I'm only using sqlite dbs I only need this one url
 	
 	
 	public DbClass(String sDatabaseToUse_) throws Exception {
 		String sDatabaseToUse = sDatabaseToUse_;
-		String sDbUrl = sDriver + ":" + sDatabaseToUse;
+		sDbUrl = sDriver + ":" + sDatabaseToUse;
 //		sDriverName = getDriverString(sDbUrl); // this function will split the driver string from the Url
 		
 		setConnection();
