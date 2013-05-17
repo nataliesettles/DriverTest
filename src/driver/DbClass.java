@@ -9,10 +9,8 @@ import java.sql.ResultSetMetaData;
 import java.sql.DatabaseMetaData;
 
 public class DbClass {
-//	public String sUrl;
 	public String sDbUrl;
 	private String sDriverName = "org.sqlite.JDBC";
-//	private String sDriver;
 	private Connection conn = null;
 	private Statement stmt = null;
 	private String sDriver = "jdbc:sqlite"; // moved this here because as long as I'm only using sqlite dbs I only need this one url
@@ -21,8 +19,6 @@ public class DbClass {
 	public DbClass(String sDatabaseToUse_) throws Exception {
 		String sDatabaseToUse = sDatabaseToUse_;
 		sDbUrl = sDriver + ":" + sDatabaseToUse;
-//		sDriverName = getDriverString(sDbUrl); // this function will split the driver string from the Url
-		
 		setConnection();
 	}
 	
@@ -51,10 +47,12 @@ public class DbClass {
 		if (conn != null) { try { conn.close(); } catch (Exception ignore) {} }
 	}
 	
+	// to get a result set from the database
 	public ResultSet executeQuery(String instruction) throws SQLException {
 		return stmt.executeQuery(instruction);
 	}
 	
+	// to make changes to the database
 	public void execute(String instruction) throws SQLException {
 		stmt.executeUpdate(instruction);
 	}

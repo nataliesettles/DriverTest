@@ -12,7 +12,7 @@ public class DriverConnection {
 
 public static void main (String[] args) throws Exception {
 
-	// the sql string commands
+	// the SQL string commands
 	String sDropTable = "DROP TABLE IF EXISTS dummy"; // this deletes the table if it already exists
 	String sMakeTable = "CREATE TABLE dummy (id numeric, response text)";
 	String sMakeInsert = "INSERT INTO dummy VALUES (1,'Hello from the database')";
